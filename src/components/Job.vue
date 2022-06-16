@@ -4,9 +4,9 @@
             <img :src="job.imgUrl" class="img-fluid" alt="">
             <div>
                 <p class="text-center">
-                    {{ job.bedrooms }} |{{ job.bathrooms }} |{{ job.levels }} |{{ job.year }} </p>
+                    {{ job.company }} |{{ job.jobTitle }} |{{ job.rate }} </p>
                 <p>{{ job.description }}</p>
-                <b>${{ job.price }}</b>
+                <b>${{ job.hours }}</b>
                 <p class="mb-0">
                     <b class="text-info">{{ job.creator?.name }}</b>
 
@@ -18,7 +18,7 @@
                 <i class="mdi mdi-delete-forever"></i>
             </button>
             <Modal v-if="job.creatorId == account.id" :id="'edit-job' + job.id">
-                <template #header>Edit {{ job.bedrooms }} {{ job.bathrooms }}</template>
+                <template #header>Edit {{ job.company }} {{ job.jobTitle }}</template>
                 <template #body>
                     <JobForm :editJob="job" />
                 </template>
